@@ -16,10 +16,10 @@
 		Dim ResponseError As String = ""
 		_credentialOptions = New CredentialsOptions(127.0.0.1, "E1", 11200, "admin", "admin", "ES", "Test")
 		ResponseError = lkclient.Login(_credentialOptions)
-    ...
-    lkclient.Logout()
+    		...
+    		lkclient.Logout()
     
-    Dim responselkdata As LkData
+    		Dim responselkdata As LkData
 		Dim _readOptions As ReadOptions = New ReadOptions(False, False, False, False, False)
 		responselkdata = client.Read("LK.CUSTOMERS", "2", "", _readOptions, "", 600)
     
