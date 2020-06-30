@@ -7,7 +7,7 @@
 		...    
 		string error = _LinkarClt.Logout();
 		
-		ReadOptions readOptions = new ReadOptions(false, false, false, false, false);
+		ReadOptions readOptions = new ReadOptions(false, false, false, false);
 		LkData _responselkdata = client.Read("LK.CUSTOMERS", "2", "", readOptions, "", 600);
     
 # VB
@@ -20,7 +20,7 @@
     		lkclient.Logout()
     
     		Dim responselkdata As LkData
-		Dim _readOptions As ReadOptions = New ReadOptions(False, False, False, False, False)
+		Dim _readOptions As ReadOptions = New ReadOptions(False, False, False, False)
 		responselkdata = client.Read("LK.CUSTOMERS", "2", "", _readOptions, "", 600)
     
 # Java
@@ -30,7 +30,7 @@
 		...
 		String error = _LinkarClt.Logout();
     
-		ReadOptions readOptions = new ReadOptions(false, false, false, false, false);
+		ReadOptions readOptions = new ReadOptions(false, false, false, false);
 		LkData responselkdata = client.Read("LK.CUSTOMERS", "2", "", readOptions, "", 600);
 		
 # EXCEL
@@ -43,7 +43,7 @@
 		
 		Dim rop As ReadOptions
 		Set rop = New ReadOptions
-		Call rop.InitializeProperties(False, False, False, False, False)
+		Call rop.InitializeProperties(False, False, False, False)
 		Set responselkdata = client.Read("LK.CUSTOMERS", "2", "", rop)
     
 # PHP Windows (LinkarClientCOM Library)
@@ -55,7 +55,7 @@
 		$lkClt -> Logout();
 		
 		$rop = new COM("LinkarCommon.ReadOptions");
-		$rop -> InitializeProperties(false, false, false, false, false);			
+		$rop -> InitializeProperties(false, false, false, false);			
 		$responselkdata = $client -> Read("LK.CUSTOMERS", "2", "", $rop);
     
 # PHP Linux extension (LinkarClientC Library)
@@ -79,8 +79,7 @@
 		$rop_conversion = 0; // FALSE
 		$rop_formatSpec = 0; // FALSE
 		$rop_originalRecords = 0; // FALSE
-		$rop_dictionaries = 0; // FALSE
-		$rop_readOptions = LkCreateReadOptions($rop_calculated, $rop_conversion, $rop_formatSpec, $rop_originalRecords, $rop_dictionaries);
+		$rop_readOptions = LkCreateReadOptions($rop_calculated, $rop_conversion, $rop_formatSpec, $rop_originalRecords);
 
 		$hasError = "";
 		$responseStringRead = LkRead($connectionInfo, $hasError, "LK.CUSTOMERS", "2", "", $readOptions, $IO_FORMAT_MV, "", -1);
